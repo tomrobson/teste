@@ -99,9 +99,9 @@
             android:layout_height="wrap_content"
             android:id="@+id/button3"
             android:layout_weight="0.67"
-            android:onClick="mostrarMensagem"
             android:padding="5dp"
-            android:layout_gravity="bottom" />
+            android:layout_gravity="bottom"
+            android:onClick="chamarTelaLista" />
 
         <Button
             android:text="Cancelar"
@@ -110,7 +110,8 @@
             android:id="@+id/button4"
             android:layout_weight="0.68"
             android:padding="5dp"
-            android:layout_gravity="bottom" />
+            android:layout_gravity="bottom"
+            android:onClick="mostrarMensagem" />
     </LinearLayout>
 
 </LinearLayout>

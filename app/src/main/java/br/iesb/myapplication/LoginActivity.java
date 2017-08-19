@@ -23,7 +23,4 @@ public class LoginActivity extends AppCompatActivity {
         Toast.makeText(this, "Teste de botão login", Toast.LENGTH_LONG).show();
     }
 
-    public void chamarTelaLista(View parametro){
-
-    }
 }
