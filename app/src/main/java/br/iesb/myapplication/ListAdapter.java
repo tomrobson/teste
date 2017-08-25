@@ -10,27 +10,37 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class ListAdapter extends RecyclerView.Adapter{
+import java.util.ArrayList;
+
+public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder>{
 
     private Context context;
+    private ArrayList<Contato> modelo;
+
+    public ListAdapter (Context context, ArrayList<Contato> modelo){
+        this.context = context;
+        this.modelo = modelo;
+    }
 
     private ListAdapter (Context context) { this.context = context; }
 
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ListViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(context).inflate(R.layout.layout, parent, false);
 
         return new ListViewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-
+    public void onBindViewHolder(ListViewHolder holder, int position) {
+        Contato c = modelo.get(position);
+        holder.nome.setText(c.getNome());
+        holder.descricao.setText(c.getDescricao());
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return modelo.size();
     }
 
     public class ListViewHolder extends RecyclerView.ViewHolder{
@@ -41,7 +51,7 @@ public class ListAdapter extends RecyclerView.Adapter{
         public ListViewHolder(View v){
             super(v);
 
-            avatar = v.findViewById(R.id.image);
+            avatar = v.findViewById(R.id.imagem);
             nome = v.findViewById(R.id.nome);
             descricao = v.findViewById(R.id.descricao);
         }

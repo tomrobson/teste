@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void chamarTelaLista(View parametro) {
-        Intent it = new Intent(MainActivity.this, ListActivity.class);
+        Intent it = new Intent(this, ListActivity.class);
         startActivity(it);
     }
 }
